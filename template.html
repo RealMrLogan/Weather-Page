@@ -19,7 +19,11 @@
         <h2>School Assignments</h2>
     </main>
     <footer>
-        <p>&copy; Logan, Add today's date</p>
+        <p>&copy; Logan, <span id="date"></span></p>
     </footer>
+    <script>
+            const d = new Date();
+            document.getElementById("date").innerHTML = d.toLocaleDateString("en-US");
+        </script>
 </body>
 </html>
