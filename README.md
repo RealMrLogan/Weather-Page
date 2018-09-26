@@ -1,2 +1,2 @@
 # CIT230
-[Template](template.html)
+[Homepage](homepage.html)
