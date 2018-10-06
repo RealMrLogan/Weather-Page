@@ -14,6 +14,10 @@ body {
    background-color: #DAD2D8;
 }
 
+p, h1, h2 {
+   color: #143642;
+}
+
 header {
    background-color: #0F8B8D;
    font-size: 3em;
@@ -24,12 +28,12 @@ header {
 
 nav {
    text-align: left;
-   padding: 1.5%;
-   padding-left: 10%;
+   padding: .5%;
+   padding-left: 20%;
 }
 nav a {
    background-color: #A8201A;
-   padding: 2%;
+   padding: 1%;
    text-transform: uppercase;
    text-decoration: none;
    border-radius: 5px;
@@ -37,10 +41,25 @@ nav a {
    color: #DAD2D8;
 }
 nav a:hover {
-   padding-top: 3.5%;
+   padding-top: 2%;
 }
 nav a:visited {
    color: #DAD2D8;
+}
+
+main {
+   width: 60%;
+   margin: auto;
+}
+
+a {
+   color: #A8201A;
+   text-decoration: none;
+   transition: all .2s ease-in-out;
+}
+a:hover {
+   position: relative;
+   color: #143642;
 }
 
 footer {
@@ -50,5 +69,7 @@ footer {
    background-color: #0F8B8D;
    text-align: center;
    padding: 1%;
+}
+footer p {
    color: #DAD2D8;
 }
