@@ -55,6 +55,14 @@ nav a:visited {
    /* color: #DAD2D8; */
 }
 
+nav ul {
+   margin: 0;
+   padding: 0;
+}
+nav ul li {
+   list-style-type: none;
+}
+
 hr {
    margin: 0;
    color: #A8201A;
