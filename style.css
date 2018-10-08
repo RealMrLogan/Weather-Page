@@ -39,20 +39,31 @@ nav {
    padding-left: 20%;
 }
 nav a {
-   background-color: #A8201A;
-   padding: 1%;
+   color: #A8201A;
+   padding: .75% 2%;
    text-transform: uppercase;
    text-decoration: none;
-   border-radius: 5px;
    transition: all .2s ease-in-out;
-   color: #DAD2D8;
+
    font-family: 'Nanum Myeongjo', serif;
 }
 nav a:hover {
-   padding-top: 2%;
+   color: #DAD2D8;
+   background-color: #A8201A;
 }
 nav a:visited {
-   color: #DAD2D8;
+   /* color: #DAD2D8; */
+}
+
+hr {
+   margin: 0;
+   color: #A8201A;
+   border: 0; 
+   height: 1px; 
+   background-image: -webkit-linear-gradient(left, #DAD2D8, #A8201A, #DAD2D8);
+   background-image: -moz-linear-gradient(left, #DAD2D8, #A8201A, #DAD2D8);
+   background-image: -ms-linear-gradient(left, #DAD2D8, #A8201A, #DAD2D8);
+   background-image: -o-linear-gradient(left, #DAD2D8, #A8201A, #DAD2D8); 
 }
 
 main {
