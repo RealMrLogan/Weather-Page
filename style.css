@@ -16,7 +16,7 @@ body {
    background-color: #DAD2D8;
 }
 
-p, h1, h2 {
+p, h1, h2, h3 {
    color: #143642;
    font-family: 'Nanum Myeongjo', serif;
 }
@@ -79,7 +79,9 @@ main {
    margin: auto;
 }
 main p {
+   padding: 5px 0;
    padding-left: 5%;
+   font-size: 18px;
 }
 
 a {
