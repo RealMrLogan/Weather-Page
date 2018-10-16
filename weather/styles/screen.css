@@ -62,7 +62,10 @@ footer {
 }
 
 /*  3.  Mobile First (styles specific to small screens) */
-header h1, ul, #site-brand, p {
+header h1,
+ul,
+#site-brand,
+p {
    margin: 0;
    padding: 0;
 }
@@ -75,7 +78,8 @@ header {
    padding: 5px;
 }
 
-header, #demographics {
+header,
+#demographics {
    display: flex;
    width: 100%;
 }
@@ -84,6 +88,7 @@ header img {
    width: 10%;
    height: 10%;
 }
+
 header h1 {
    padding-left: 10px;
    font-size: 1.5em;
@@ -98,13 +103,15 @@ nav {
    padding: 5px;
    padding-top: 10px;
 }
+
 a {
    text-decoration: none;
 }
 
 #demographics {
-   padding-left:5px;
+   padding-left: 5px;
 }
+
 #demographics p {
    font-size: 14px;
    padding-left: 5px;
@@ -115,16 +122,59 @@ a {
    margin-left: 20%;
    margin-right: 20%;
 }
+.widgets .tile {
+   height: 200px;
+   margin: 10px 0px;
+}
+
 .widgets .tile h3 {
    display: none;
 }
+
 #large-temp {
    font-size: 5em;
    padding: 5px;
 }
 
-#rainPic {
-   width: 50%;
+#large-temp span {
+   font-size: 4rem;
+   vertical-align: .3em;
+}
+
+.widgets .tile div {
+   display: flex;
+   position: relative;
+}
+
+.widgets .tile div p:first-child {
+   padding-left: 30%;
+   color: red;
+}
+
+.widgets .tile div p:last-child {
+   padding-left: 10%;
+   color: blue;
+}
+#feels-like {
+   text-align: center;
+}
+
+#wind-direction, #wind-direction + p {
+   text-align: center;
+}
+.widgets .tile:last-child {
+   padding-left: 15px;
+   padding-right: 15px;
+}
+.widgets .tile:last-child h3{
+   margin: 0;
+   text-align: center;
+   font-size: 1.5em;
+   display: block;
+}
+#rain-pic {
+   width: 100%;
+   border: 2px black solid;
 }
 
 
