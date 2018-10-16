@@ -158,7 +158,9 @@ a {
 #feels-like {
    text-align: center;
 }
-
+#compass-north {
+   text-align: center;
+}
 #wind-direction, #wind-direction + p {
    text-align: center;
 }
