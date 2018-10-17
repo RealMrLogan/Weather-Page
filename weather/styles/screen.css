@@ -1,12 +1,21 @@
 /* ******************************
 *  Stylesheet for Screened Devices
-*  Created by: Logan Saunders
+*  Created by: Put your name here
 *  
 *  1.  Includes (fonts and supplementary stylesheets)
-*  1.1 Normalize */
-@import url('/weather/styles/normalize.css');
-/*  1.2 Google fonts
- * Sansita font      */
+*  1.1 Normalize
+*  1.2 Google fonts
+*
+*  2.  General Styles (for all pages and devices)
+*
+*  3.  Mobile First (styles specific to small screens)
+*
+*  4.  Large Screen Styles (Media Queries begin here)
+*
+* ****************************** */
+
+/* 1. Includes */
+@import url('normalize.css');
 @import url('https://fonts.googleapis.com/css?family=Sansita');
 
 /*  2.  General Styles (for all pages and devices) */
@@ -21,7 +30,7 @@ html {
 }
 
 body {
-   font-family: helvetica, verdana, sans-serif;
+   font-family: helvetica, sans-serif;
    font-size: 20px;
 }
 
@@ -31,7 +40,7 @@ h3,
 h4,
 h5,
 h6 {
-   font-family: sansita, Eurostyle, sans-serif;
+   font-family: sansita, sans-serif;
 }
 
 .tile {
@@ -93,6 +102,10 @@ header h1 {
    padding-left: 10px;
    font-size: 1.5em;
    font-weight: 100;
+}
+
+.head {
+   
 }
 
 nav {
@@ -180,6 +193,4 @@ a {
 }
 
 
-/*  4.  Large Screen Styles (Media Queries begin here)
-*
-* ****************************** */
+/*  4.  Large Screen Styles (Media Queries begin here) */
