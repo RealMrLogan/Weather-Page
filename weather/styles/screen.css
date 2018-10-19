@@ -105,7 +105,7 @@ header h1 {
 }
 
 .head {
-   
+   padding-left: 10px;
 }
 
 nav {
@@ -121,14 +121,14 @@ a {
    text-decoration: none;
 }
 
-#demographics {
-   padding-left: 5px;
-}
-
 #demographics p {
    font-size: 14px;
    padding-left: 5px;
    padding-top: 10px;
+}
+
+#demographics p:first-child {
+   padding-left: 0;
 }
 
 .widgets {
@@ -147,6 +147,7 @@ a {
 #large-temp {
    font-size: 5em;
    padding: 5px;
+   text-align: center;
 }
 
 #large-temp span {
