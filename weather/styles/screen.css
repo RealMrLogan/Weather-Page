@@ -193,5 +193,7 @@ a {
    border: 2px black solid;
 }
 
-
 /*  4.  Large Screen Styles (Media Queries begin here) */
+@media screen and (min-width: 750px) {
+   /* All large screen CSS rules */
+}
