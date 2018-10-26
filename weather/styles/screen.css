@@ -55,12 +55,6 @@ nav ul li {
    list-style: none;
 }
 
-nav {
-   position: fixed;
-   bottom: 0;
-   left: 0;
-}
-
 footer {
    margin-bottom: 2em;
 }
@@ -77,6 +71,12 @@ ul,
 p {
    margin: 0;
    padding: 0;
+}
+
+nav {
+   position: fixed;
+   bottom: 0;
+   left: 0;
 }
 
 html {
@@ -132,8 +132,7 @@ a {
 }
 
 .widgets {
-   margin-left: 20%;
-   margin-right: 20%;
+   margin: 0% 20%;
 }
 .widgets .tile {
    height: 200px;
@@ -196,4 +195,50 @@ a {
 /*  4.  Large Screen Styles (Media Queries begin here) */
 @media screen and (min-width: 750px) {
    /* All large screen CSS rules */
+   body {
+      padding: 0px 30px;
+   }
+   header>h1 {
+      font-size: 60px;
+   }
+   header>img {
+      width: 5%;
+      height: 5%;
+   }
+   nav {
+      position: relative;
+      border: 2px solid black;
+      width: 80%;
+   }
+   nav>ul {
+      padding: 5px;
+      padding-top: 0px;
+      text-align: left;
+      justify-content: space-around;
+   }
+   nav>ul>li {
+      padding-left: 20px;
+   }
+   main {
+      width: 100%;
+      height: 100%;
+   }
+   #demographics>p {
+      padding-right: 20px;
+   }
+   .widgets {
+      margin: 0 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 50%;
+   }
+   .widgets>.tile {
+      margin: 40px 0;
+      width: 30%;
+      height: 300px;
+   }
+   #forecast {
+      border: 2px solid black;
+   }
 }
