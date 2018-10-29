@@ -68,6 +68,50 @@ footer {
    font-weight: 600;
 }
 
+#forecast {
+   border: 2px solid black;
+   border-radius: 15px;
+}
+
+ul::-webkit-scrollbar {
+   width: 12px;
+}
+
+ul::-webkit-scrollbar-track {
+   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-thumb {
+   border-radius: 15px;
+   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+#forecast>h4 {
+   margin: 5px;
+   padding-left: 10px;
+}
+
+#forecast>ul {
+   display: flex;
+   overflow-x: auto;
+}
+
+#forecast>ul>li {
+   border-right: 2px solid;
+   white-space: nowrap;
+   padding: 0px 10px;
+}
+
+#forecast>ul>li:last-child {
+   border-right: none;
+}
+
+footer>hr {
+   background-color: black;
+   height: 2px;
+}
+
 /*  3.  Mobile First (styles specific to small screens) */
 header h1,
 ul,
@@ -113,12 +157,13 @@ header h1 {
 }
 
 nav {
-   background-color: aliceblue;
+   background-color: white;
    width: 100%;
    text-align: center;
    font-size: 16px;
    padding: 5px;
    padding-top: 10px;
+   border: 2px solid black;
 }
 
 a {
@@ -174,14 +219,8 @@ a {
    color: blue;
 }
 
-#feels-like {
-   text-align: center;
-}
-
-#compass-north {
-   text-align: center;
-}
-
+#feels-like,
+#compass-north,
 #wind-direction,
 #wind-direction+p {
    text-align: center;
@@ -190,6 +229,7 @@ a {
 .widgets .tile:last-child {
    padding-left: 15px;
    padding-right: 15px;
+   overflow: hidden;
 }
 
 .widgets .tile:last-child h3 {
@@ -199,7 +239,7 @@ a {
    display: block;
 }
 
-#rain-pic {
+#summary-pic {
    width: 100%;
    border: 2px black solid;
 }
@@ -222,16 +262,21 @@ a {
    }
 
    nav {
+      display: flex;
       position: relative;
-      border: 2px solid black;
       width: 80%;
+      padding: 0;
    }
 
    nav>ul {
       padding: 5px;
-      padding-top: 0px;
       text-align: left;
       justify-content: space-around;
+   }
+
+   nav>ul:first-child {
+      padding-right: 20px;
+      border-right: 2px solid;
    }
 
    nav>ul>li {
@@ -247,9 +292,11 @@ a {
       padding-right: 20px;
       border-left: 2px solid;
    }
+
    #demographics>p:first-child {
       border-left: none;
    }
+
    .widgets {
       margin: 0 0;
       display: flex;
@@ -262,49 +309,5 @@ a {
       margin: 40px 0;
       width: 30%;
       height: 300px;
-   }
-
-   #forecast {
-      border: 2px solid black;
-      border-radius: 15px;
-   }
-
-   ul::-webkit-scrollbar {
-      width: 12px;
-   }
-
-   ul::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-      border-radius: 10px;
-   }
-
-   ul::-webkit-scrollbar-thumb {
-      border-radius: 15px;
-      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-   }
-
-   #forecast>h4 {
-      margin: 5px;
-      padding-left: 10px;
-   }
-
-   #forecast>ul {
-      display: flex;
-      overflow-x: auto;
-   }
-
-   #forecast>ul>li {
-      border-right: 2px solid;
-      white-space: nowrap;
-      padding: 0px 10px;
-   }
-
-   #forecast>ul>li:last-child {
-      border-right: none;
-   }
-
-   footer>hr {
-      background-color: black;
-      height: 2px;
    }
 }
