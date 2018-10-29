@@ -50,6 +50,10 @@ h6 {
    border-radius: 15px;
 }
 
+nav {
+   display: flex;
+}
+
 nav ul li {
    display: inline-block;
    list-style: none;
@@ -164,6 +168,10 @@ nav {
    padding: 5px;
    padding-top: 10px;
    border: 2px solid black;
+   justify-content: center;
+}
+nav ul:first-child {
+   padding-right: 5px;
 }
 
 a {
@@ -262,10 +270,10 @@ a {
    }
 
    nav {
-      display: flex;
       position: relative;
       width: 80%;
       padding: 0;
+      justify-content: flex-start;
    }
 
    nav>ul {
