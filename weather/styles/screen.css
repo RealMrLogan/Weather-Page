@@ -55,11 +55,15 @@ nav ul li {
    list-style: none;
 }
 
+ul {
+   list-style-type: none;
+}
+
 footer {
    margin-bottom: 2em;
 }
 
-#site-brand {
+.head>h2 {
    font-size: 2em;
    font-weight: 600;
 }
@@ -67,7 +71,7 @@ footer {
 /*  3.  Mobile First (styles specific to small screens) */
 header h1,
 ul,
-#site-brand,
+.head>h2,
 p {
    margin: 0;
    padding: 0;
@@ -124,7 +128,7 @@ a {
 #demographics p {
    font-size: 14px;
    padding-left: 5px;
-   padding-top: 10px;
+   margin-top: 10px;
 }
 
 #demographics p:first-child {
@@ -134,6 +138,7 @@ a {
 .widgets {
    margin: 0% 20%;
 }
+
 .widgets .tile {
    height: 200px;
    margin: 10px 0px;
@@ -168,25 +173,32 @@ a {
    padding-left: 10%;
    color: blue;
 }
+
 #feels-like {
    text-align: center;
 }
+
 #compass-north {
    text-align: center;
 }
-#wind-direction, #wind-direction + p {
+
+#wind-direction,
+#wind-direction+p {
    text-align: center;
 }
+
 .widgets .tile:last-child {
    padding-left: 15px;
    padding-right: 15px;
 }
-.widgets .tile:last-child h3{
+
+.widgets .tile:last-child h3 {
    margin: 0;
    text-align: center;
    font-size: 1.5em;
    display: block;
 }
+
 #rain-pic {
    width: 100%;
    border: 2px black solid;
@@ -194,37 +206,49 @@ a {
 
 /*  4.  Large Screen Styles (Media Queries begin here) */
 @media screen and (min-width: 750px) {
+
    /* All large screen CSS rules */
    body {
       padding: 0px 30px;
    }
+
    header>h1 {
       font-size: 60px;
    }
+
    header>img {
-      width: 5%;
-      height: 5%;
+      width: 10%;
+      height: 10%;
    }
+
    nav {
       position: relative;
       border: 2px solid black;
       width: 80%;
    }
+
    nav>ul {
       padding: 5px;
       padding-top: 0px;
       text-align: left;
       justify-content: space-around;
    }
+
    nav>ul>li {
       padding-left: 20px;
    }
+
    main {
       width: 100%;
       height: 100%;
    }
+
    #demographics>p {
       padding-right: 20px;
+      border-left: 2px solid;
+   }
+   #demographics>p:first-child {
+      border-left: none;
    }
    .widgets {
       margin: 0 0;
@@ -233,12 +257,54 @@ a {
       width: 100%;
       height: 50%;
    }
+
    .widgets>.tile {
       margin: 40px 0;
       width: 30%;
       height: 300px;
    }
+
    #forecast {
       border: 2px solid black;
+      border-radius: 15px;
+   }
+
+   ul::-webkit-scrollbar {
+      width: 12px;
+   }
+
+   ul::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+   }
+
+   ul::-webkit-scrollbar-thumb {
+      border-radius: 15px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+   }
+
+   #forecast>h4 {
+      margin: 5px;
+      padding-left: 10px;
+   }
+
+   #forecast>ul {
+      display: flex;
+      overflow-x: auto;
+   }
+
+   #forecast>ul>li {
+      border-right: 2px solid;
+      white-space: nowrap;
+      padding: 0px 10px;
+   }
+
+   #forecast>ul>li:last-child {
+      border-right: none;
+   }
+
+   footer>hr {
+      background-color: black;
+      height: 2px;
    }
 }
