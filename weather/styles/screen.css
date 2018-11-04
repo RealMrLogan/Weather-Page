@@ -226,8 +226,10 @@ a {
    padding-left: 10%;
    color: blue;
 }
+.widgets .tile p {
+   text-align: center;
+}
 
-#feels-like,
 #compass-north,
 #wind-direction,
 #wind-direction+p {
