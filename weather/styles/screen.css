@@ -72,6 +72,14 @@ footer {
    font-weight: 600;
 }
 
+#demographics>p {
+   border-left: 2px solid;
+}
+
+#demographics>p:first-child {
+   border-left: none;
+}
+
 #forecast {
    border: 2px solid black;
    border-radius: 15px;
@@ -182,6 +190,7 @@ a {
    font-size: 14px;
    padding-left: 5px;
    margin-top: 10px;
+   padding-right: 10px;
 }
 
 #demographics p:first-child {
@@ -300,11 +309,6 @@ a {
 
    #demographics>p {
       padding-right: 20px;
-      border-left: 2px solid;
-   }
-
-   #demographics>p:first-child {
-      border-left: none;
    }
 
    .widgets {
