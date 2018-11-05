@@ -14,11 +14,15 @@
 *
 * ****************************** */
 
+/***************/
 /* 1. Includes */
+/***************/
 @import url('normalize.css');
 @import url('https://fonts.googleapis.com/css?family=Sansita');
 
+/***************************************************/
 /*  2.  General Styles (for all pages and devices) */
+/***************************************************/
 html {
    box-sizing: border-box;
 }
@@ -124,7 +128,9 @@ footer>hr {
    height: 2px;
 }
 
+/********************************************************/
 /*  3.  Mobile First (styles specific to small screens) */
+/********************************************************/
 header h1,
 ul,
 .head>h2,
@@ -166,6 +172,9 @@ header h1 {
 
 .head {
    padding-left: 10px;
+}
+.head h2 {
+   font-size: 1.5em;
 }
 
 nav {
@@ -263,7 +272,9 @@ a {
    border: 2px black solid;
 }
 
+/*******************************************************/
 /*  4.  Large Screen Styles (Media Queries begin here) */
+/*******************************************************/
 @media screen and (min-width: 750px) {
 
    /* All large screen CSS rules */
