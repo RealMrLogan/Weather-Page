@@ -25,12 +25,14 @@ body {
 p,
 h1,
 h2,
-h3, li {
+h3,
+li {
    color: #143642;
    font-family: 'Nanum Myeongjo', serif;
 }
 
-p, li {
+p,
+li {
    font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -111,7 +113,7 @@ img {
 
 .tile {
    border: 2px solid black;
-   width: 50%;
+   width: 100%;
 }
 
 .tile h2 {
@@ -158,18 +160,27 @@ footer p {
    main {
       width: 80%;
    }
+
    header h1 {
       font-size: 3em;
    }
+
    h2 {
       font-size: 2em;
    }
+
+   .tile {
+      width: 50%;
+   }
+
    .tile ul {
       font-size: 1.5em;
    }
+
    .small-info {
       display: none;
    }
+
    .large-info {
       display: block;
    }
