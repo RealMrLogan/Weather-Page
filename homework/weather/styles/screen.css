@@ -213,6 +213,9 @@ a {
 .widgets .tile {
    height: 200px;
    margin: 10px 0px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
 }
 
 .widgets .tile h3 {
@@ -236,7 +239,6 @@ a {
 }
 
 .widgets .tile div p:first-child {
-   padding-left: 30%;
    color: red;
 }
 
@@ -246,6 +248,11 @@ a {
 }
 .widgets .tile p {
    text-align: center;
+}
+
+#compass {
+   width: 50%;
+   height: auto;
 }
 
 #compass-north,
@@ -334,6 +341,10 @@ a {
       margin: 40px 0;
       width: 30%;
       height: 300px;
+   }
+
+   #compass {
+      width: 30%;
    }
 
    .widgets .tile h3 {
