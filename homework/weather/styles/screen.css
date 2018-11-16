@@ -128,6 +128,46 @@ footer>hr {
    height: 2px;
 }
 
+#dial {
+   height: 150px;
+   width: 150px;
+   background: no-repeat center/85% url('/homework/weather/optimized-images/wind-pointer.png');
+   z-index: 100;
+   margin: -1em auto 0;
+   position: relative;
+   top: 20px;
+}
+
+.tile:nth-child(2) p:nth-child(4){
+   position: relative;
+   top: -50px;
+} 
+
+.n {
+   transform: rotate(0deg);
+}
+.ne {
+   transform: rotate(45deg);
+}
+.e {
+   transform: rotate(90deg);
+}
+.se {
+   transform: rotate(120deg);
+}
+.s {
+   transform: rotate(180deg);
+}
+.sw {
+   transform: rotate(225deg);
+}
+.w {
+   transform: rotate(270deg);
+}
+.nw {
+   transform: rotate(315deg);
+}
+
 /********************************************************/
 /*  3.  Mobile First (styles specific to small screens) */
 /********************************************************/
@@ -173,6 +213,7 @@ header h1 {
 .head {
    padding-left: 10px;
 }
+
 .head h2 {
    font-size: 1.5em;
 }
@@ -187,6 +228,7 @@ nav {
    border: 2px solid black;
    justify-content: center;
 }
+
 nav ul:first-child {
    padding-right: 5px;
 }
@@ -246,14 +288,15 @@ a {
    padding-left: 10%;
    color: blue;
 }
+
 .widgets .tile p {
    text-align: center;
 }
 
-#compass {
+/* #compass {
    width: 50%;
    height: auto;
-}
+} */
 
 #compass-north,
 #wind-direction,
