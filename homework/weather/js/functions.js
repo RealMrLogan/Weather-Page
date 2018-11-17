@@ -1,6 +1,10 @@
 /* *************************************
  *  Weather Site JavaScript Functions
  ****************************************/
+// Testing my functions
+buildWC(50, 32);
+windDial("SW");
+changeSummaryImage(getCondition("in the ballpark of having snow"));
 
 // Calculate the Windchill
 function buildWC(speed, temp) {
@@ -21,8 +25,6 @@ function buildWC(speed, temp) {
    // wc = 'Feels like '+wc+'°F';
    feelTemp.innerHTML = wc;
 }
-
-windDial("SE")
 
 // Rotate the wind Dial
 function windDial(direction) {
@@ -81,56 +83,54 @@ function windDial(direction) {
 
 //Get the weather condition
 function getCondition(currentCondition) {
-   let weatherCondition = "";
-
+   // if the currentCondition contains any of the keywords I specified
    if (currentCondition.includes("sunny") || currentCondition.includes("clear")) {
-      weatherCondition = "clear";
+      currentCondition = "clear";
    } else if (currentCondition.includes("cloud") || currentCondition.includes("overcast")) {
-      weatherCondition = "clouds";
+      currentCondition = "clouds";
    } else if (currentCondition.includes("rain") || currentCondition.includes("wet")) {
-      weatherCondition = "rain";
+      currentCondition = "rain";
    } else if (currentCondition.includes("fog")) {
-      weatherCondition = "fog";
+      currentCondition = "fog";
    } else if (currentCondition.includes("snow")) {
-      weatherCondition = "snow";
-   } else {
+      currentCondition = "snow";
+   } else { // this is if my condions aren't specific enough
       console.log(`"${currentCondition}" does not match a weather condition.`);
    }
 
-   console.log(`The current condition is ${weatherCondition}.`);
+   console.log(`The current condition is ${currentCondition}.`);
 
-   return weatherCondition;
+   return currentCondition;
 }
 
 // change the weather picture
 function changeSummaryImage(weatherCondition) {
    const widgets = document.getElementsByClassName("widgets")[0];
 
+   // depending on the weatherCondition, we wil change the picture
    switch (weatherCondition) {
       case "clear":
-      console.log(`Setting the image to ${weatherCondition}.`);
+         console.log(`Setting the image to ${weatherCondition}.`);
          widgets.setAttribute("class", "widgets clear");
          break;
       case "clouds":
-      console.log(`Setting the image to ${weatherCondition}.`);
+         console.log(`Setting the image to ${weatherCondition}.`);
          widgets.setAttribute("class", "widgets clouds");
          break;
       case "fog":
-      console.log(`Setting the image to ${weatherCondition}.`);
+         console.log(`Setting the image to ${weatherCondition}.`);
          widgets.setAttribute("class", "widgets fog");
          break;
       case "rain":
-      console.log(`Setting the image to ${weatherCondition}.`);
+         console.log(`Setting the image to ${weatherCondition}.`);
          widgets.setAttribute("class", "widgets rain");
          break;
       case "snow":
-      console.log(`Setting the image to ${weatherCondition}.`);
+         console.log(`Setting the image to ${weatherCondition}.`);
          widgets.setAttribute("class", "widgets snow");
          break;
-      default:
-      console.log(`${weatherCondition} did not match any cases.`);
+      default: // if the weatherCondition was anything except what I was expecting
+         console.log(`${weatherCondition} did not match any cases.`);
          break;
    }
 }
-
-changeSummaryImage(getCondition("cloudy"));
