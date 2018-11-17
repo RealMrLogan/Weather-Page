@@ -54,6 +54,26 @@ h6 {
    border-radius: 15px;
 }
 
+.widgets {
+   background-size: cover;
+}
+
+.clear {
+   background-image: url(/homework/weather/optimized-images/clear-small.jpg)
+}
+.clouds {
+   background-image: url(/homework/weather/optimized-images/clouds-small.jpg)
+}
+.fog {
+   background-image: url(/homework/weather/optimized-images/fog-small.jpg)
+}
+.rain {
+   background-image: url(/homework/weather/optimized-images/rain-small.jpg)
+}
+.snow {
+   background-image: url(/homework/weather/optimized-images/snow-small.jpg)
+}
+
 nav {
    display: flex;
 }
@@ -293,12 +313,7 @@ a {
    text-align: center;
 }
 
-/* #compass {
-   width: 50%;
-   height: auto;
-} */
-
-#compass-north,
+#compass-direction,
 #wind-direction,
 #wind-direction+p {
    text-align: center;
@@ -328,6 +343,22 @@ a {
 @media screen and (min-width: 750px) {
 
    /* All large screen CSS rules */
+   .clear {
+      background-image: url(/homework/weather/optimized-images/clear-large.jpg)
+   }
+   .clouds {
+      background-image: url(/homework/weather/optimized-images/clouds-large.jpg)
+   }
+   .fog {
+      background-image: url(/homework/weather/optimized-images/fog-large.jpg)
+   }
+   .rain {
+      background-image: url(/homework/weather/optimized-images/rain-large.jpg)
+   }
+   .snow {
+      background-image: url(/homework/weather/optimized-images/snow-large.jpg)
+   }
+
    body {
       padding: 0px 30px;
    }
@@ -389,6 +420,12 @@ a {
    #compass {
       width: 30%;
    }
+
+   /* the wind speed */
+   .tile:nth-child(2) p:nth-child(4){
+      position: relative;
+      top: -65px;
+   } 
 
    .widgets .tile h3 {
       display: block;
