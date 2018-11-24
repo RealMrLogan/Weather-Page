@@ -188,6 +188,10 @@ footer>hr {
    transform: rotate(315deg);
 }
 
+.hide {
+   display: none;
+}
+
 /********************************************************/
 /*  3.  Mobile First (styles specific to small screens) */
 /********************************************************/

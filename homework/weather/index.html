@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Current Location Assessment</title>
+   <link rel="stylesheet" href="/homework/weather/styles/screen.css">
+</head>
+<!-- 
+   List of who I worked with:
+   --------------------------
+   Me, Logan Saunders
+-->
+
+<body>
+   <p id="status"></p>
+   <main class="hide">
+      <h1 id="locName"></h1>
+      <p>Location Elevation: <span id="locZip"></span></p>
+      <p>Location Longitude & Latitude: <span id="geoLoc"></span></p>
+      <p>Current Temperature: <span id="currentTemp"></span></p>
+      <p>High: <span id="highTemp"></span></p>
+      <p>Low: <span id="lowTemp"></span></p>
+      <p>Wind Speed: <span id="windSpeed"></span></p>
+      <p>Gust Speed: <span id="gustSpeed"></span></p>
+      <p>Summary: <span id="summary"></span></p>
+
+      <p>Feels Like <span id="feelsLike">21</span>F</p>
+      <div id="dial"></div>
+      <p><b>Direction: </b><span id="wind-direction">SW</span></p>
+   </main>
+   <footer>
+      <picture>
+         <source media="(max-width: 750px)" srcset="/homework/weather/optimized-images/accuweather-small.png">
+         <source srcset="/homework/weather/optimized-images/accuweather-large.png">
+         <img src="/homework/weather/optimized-images/accuweather-small.png" alt="Accu Weather Logo">
+      </picture>
+   </footer>
+
+   <script src="/homework/weather/js/functions.js"></script>
+   <script src="/homework/weather/js/geo-loc.js"></script>
+</body>
+
+</html>
