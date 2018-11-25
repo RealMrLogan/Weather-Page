@@ -83,6 +83,7 @@ function windDial(direction) {
 
 //Get the weather condition
 function getCondition(currentCondition) {
+   currentCondition = currentCondition.toLowerCase();
    // if the currentCondition contains any of the keywords I specified
    if (currentCondition.includes("sunny") || currentCondition.includes("clear")) {
       currentCondition = "clear";
@@ -106,28 +107,34 @@ function getCondition(currentCondition) {
 // change the weather picture
 function changeSummaryImage(weatherCondition) {
    const widgets = document.getElementsByClassName("widgets")[0];
+   const picture = document.getElementById("weather-picture");
 
    // depending on the weatherCondition, we wil change the picture
    switch (weatherCondition) {
       case "clear":
          console.log(`Setting the image to ${weatherCondition}.`);
          widgets.setAttribute("class", "widgets clear");
+         picture.setAttribute("class", "clear");
          break;
       case "clouds":
          console.log(`Setting the image to ${weatherCondition}.`);
          widgets.setAttribute("class", "widgets clouds");
+         picture.setAttribute("class", "clouds");
          break;
       case "fog":
          console.log(`Setting the image to ${weatherCondition}.`);
          widgets.setAttribute("class", "widgets fog");
+         picture.setAttribute("class", "fog");
          break;
       case "rain":
          console.log(`Setting the image to ${weatherCondition}.`);
          widgets.setAttribute("class", "widgets rain");
+         picture.setAttribute("class", "rain");
          break;
       case "snow":
          console.log(`Setting the image to ${weatherCondition}.`);
          widgets.setAttribute("class", "widgets snow");
+         picture.setAttribute("class", "snow");
          break;
       default: // if the weatherCondition was anything except what I was expecting
          console.log(`${weatherCondition} did not match any cases.`);
@@ -231,11 +238,13 @@ function getHourly(locData) {
 } // end getHourly function
 
 // apply the data to the website
-function buildPage(locData) {   
+function buildPage(locData) {
    buildWC(locData.windSpeed, locData.currentTemp);
    windDial(locData.windDirection);
-   getCondition(locData.summary);
-   document.getElementById("locName").innerHTML = locData.name;
+   changeSummaryImage(getCondition(locData.summary));
+   buildHourly(locData);
+   document.getElementById("locName").innerHTML = `${locData.name}, ${locData.stateAbbr}`;
+   document.getElementById("elevation").innerHTML = locData.elevation;
    document.getElementById("locZip").innerHTML = locData.postal;
    document.getElementById("geoLoc").innerHTML = locData.geoposition;
    document.getElementById("currentTemp").innerHTML = locData.currentTemp;
@@ -248,3 +257,35 @@ function buildPage(locData) {
    document.getElementById("status").className = "hide";
    document.getElementsByTagName("main")[0].className = "";
 } // end buildPage function
+
+// formats a value into a 12h AM/PM time string
+function format_time(hour) {
+   if (hour > 23) {
+      hour -= 24;
+   }
+   let amPM = (hour > 11) ? "pm" : "am";
+   if (hour > 12) {
+      hour -= 12;
+   } else if (hour == 0) {
+      hour = "12";
+   }
+   return hour + amPM;
+} // end format_time function
+
+function buildHourly(locData) {
+   //const hourlyTime = document.getElementById("forecast").children[1];
+   const hourlyTime = document.createElement("ul");
+   console.log(hourlyTime);
+
+   const currentHour = new Date().getHours();
+   console.log(currentHour);
+
+   for (let i = 0; i < 12; i++) {
+      const newHour = document.createElement('li');
+      newHour.innerHTML = `${format_time(currentHour - i)}: ${locData["hourTemp" + (i + 1)]}&deg;F`;
+      hourlyTime.appendChild(newHour);
+   }
+   console.log(hourlyTime);
+   const forecast = document.getElementById("forecast");
+   forecast.replaceChild(hourlyTime, forecast.children[1]);
+}

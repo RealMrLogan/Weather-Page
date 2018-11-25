@@ -1,42 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
 
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Current Location Assessment</title>
-   <link rel="stylesheet" href="/homework/weather/styles/screen.css">
+   <title>Current Location | loganes1.github.io</title>
+   <meta name="description" content="The weather in Franklin">
+   <meta name="viewport" content="width=device-width">
+   <link href="styles/screen.css" rel="stylesheet" type="text/css" media="screen">
 </head>
-<!-- 
-   List of who I worked with:
-   --------------------------
-   Me, Logan Saunders
--->
 
 <body>
+   <header class="head">
+      <img src="images/logo.jpeg" alt="Weather Site Logo">
+      <h1>The Weather Site</h1>
+   </header>
+   <nav>
+      <ul>
+         <li><a href="/index.html" title="Go to home page">Home</a></li>
+         <li><a href="#" title="Your current page">Current</a></li>
+         <li><a href="#" title="Search">Search</a></li>
+      </ul>
+      <ul>
+         <li><a href="franklin-weather.html" title="Weather in Franklin ID">Franklin ID</a></li>
+         <li><a href="greenville-weather.html" title="Weather in Greenville SC">Greenville SC</a></li>
+      </ul>
+   </nav>
    <p id="status"></p>
    <main class="hide">
-      <h1 id="locName"></h1>
-      <p>Location Elevation: <span id="locZip"></span></p>
-      <p>Location Longitude & Latitude: <span id="geoLoc"></span></p>
-      <p>Current Temperature: <span id="currentTemp"></span></p>
-      <p>High: <span id="highTemp"></span></p>
-      <p>Low: <span id="lowTemp"></span></p>
-      <p>Wind Speed: <span id="windSpeed"></span></p>
-      <p>Gust Speed: <span id="gustSpeed"></span></p>
-      <p>Summary: <span id="summary"></span></p>
-
-      <p>Feels Like <span id="feelsLike">21</span>F</p>
-      <div id="dial"></div>
-      <p><b>Direction: </b><span id="wind-direction">SW</span></p>
+      <section class="head">
+         <h2 id="locName">Franklin, Idaho</h2>
+         <div id="demographics">
+            <p><b>Zip:</b> <span id="locZip"></span></p>
+            <p><b>Elevation:</b> <span id="elevation"></span></p>
+            <p><b>Location:</b> <span id="geoLoc"></span></p>
+         </div>
+      </section>
+      <section class="widgets">
+         <div class="tile">
+            <h3>Temperature</h3>
+            <p id="large-temp"><span id="currentTemp"></span><span>&deg;F</span></p>
+            <div>
+               <p><span id="highTemp"></span>F</p>
+               <p><span id="lowTemp"></span>F</p>
+            </div>
+            <p>Feels Like <span id="feelsLike">21</span>F</p>
+         </div>
+         <div class="tile">
+            <h3>Wind</h3>
+            <p>N</p>
+            <div id="dial"></div>
+            <p><span id="windSpeed"></span> mph</p>
+            <p><b>Direction: </b><span id="wind-direction">SW</span></p>
+            <p><b>Gusts:</b> <span id="gustSpeed"></span> mph</p>
+         </div>
+         <div class="tile">
+            <h3><span id="summary"></span></h3>
+            <div id="weather-picture"></div>
+         </div>
+      </section>
+      <section id="forecast">
+         <h4>Hourly Forecast</h4>
+         <ul>
+            <li>12am: 41&deg;F</li>
+            <li>1am: 41&deg;F</li>
+            <li>2am: 41&deg;F</li>
+            <li>3am: 41&deg;F</li>
+            <li>4am: 41&deg;F</li>
+            <li>5am: 41&deg;F</li>
+            <li>6am: 42&deg;F</li>
+            <li>7am: 44&deg;F</li>
+            <li>8am: 44&deg;F</li>
+            <li>9am: 46&deg;F</li>
+            <li>10am: 49&deg;F</li>
+            <li>11am: 51&deg;F</li>
+            <li>12pm: 55&deg;F</li>
+            <li>13pm: 58&deg;F</li>
+            <li>14pm: 62&deg;F</li>
+            <li>15pm: 64&deg;F</li>
+            <li>16pm: 64&deg;F</li>
+            <li>17pm: 62&deg;F</li>
+            <li>18pm: 61&deg;F</li>
+            <li>19pm: 60&deg;F</li>
+            <li>20pm: 59&deg;F</li>
+            <li>21pm: 58&deg;F</li>
+            <li>22pm: 52&deg;F</li>
+            <li>23pm: 48&deg;F</li>
+         </ul>
+      </section>
    </main>
    <footer>
-      <picture>
-         <source media="(max-width: 750px)" srcset="/homework/weather/optimized-images/accuweather-small.png">
-         <source srcset="/homework/weather/optimized-images/accuweather-large.png">
-         <img src="/homework/weather/optimized-images/accuweather-small.png" alt="Accu Weather Logo">
-      </picture>
+      <hr>
+      &copy;2018 The Weather Site
    </footer>
 
    <script src="/homework/weather/js/functions.js"></script>

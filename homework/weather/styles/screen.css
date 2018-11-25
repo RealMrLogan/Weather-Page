@@ -192,6 +192,12 @@ footer>hr {
    display: none;
 }
 
+#weather-picture {
+   width: 100%;
+   height: 80%;
+   border: 2px black solid;
+}
+
 /********************************************************/
 /*  3.  Mobile First (styles specific to small screens) */
 /********************************************************/
@@ -336,10 +342,10 @@ a {
    display: block;
 }
 
-#summary-pic {
+/* #summary-pic {
    width: 100%;
    border: 2px black solid;
-}
+} */
 
 /*******************************************************/
 /*  4.  Large Screen Styles (Media Queries begin here) */
