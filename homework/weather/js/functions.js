@@ -144,7 +144,7 @@ function changeSummaryImage(weatherCondition) {
 
 // Get location code from API
 function getCode(LOCALE) {
-   const API_KEY = 'JoEFUxIBaLuf938YSpzvoVfkbmRutvSZ';
+   const API_KEY = '4ZtNR8Egdd3Ec38c20elIbtF7YOrCntW';
    const URL = 'https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=' + API_KEY + '&q=' + LOCALE;
    fetch(URL)
       .then(response => response.json())
@@ -166,7 +166,7 @@ function getCode(LOCALE) {
 
 // Get Current Weather data from API
 function getWeather(locData) {
-   const API_KEY = 'JoEFUxIBaLuf938YSpzvoVfkbmRutvSZ';
+   const API_KEY = '4ZtNR8Egdd3Ec38c20elIbtF7YOrCntW';
    const CITY_CODE = locData['key']; // We're getting data out of the object
    const URL = "https://dataservice.accuweather.com/currentconditions/v1/" + CITY_CODE + "?apikey=" + API_KEY + "&details=true";
    fetch(URL)
@@ -190,7 +190,7 @@ function getWeather(locData) {
 
 // Get next 12 hours of forecast data from API
 function getHourly(locData) {
-   const API_KEY = 'JoEFUxIBaLuf938YSpzvoVfkbmRutvSZ';
+   const API_KEY = '4ZtNR8Egdd3Ec38c20elIbtF7YOrCntW';
    const CITY_CODE = locData['key'];
    const URL = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/" + CITY_CODE + "?apikey=" + API_KEY;
    fetch(URL)
