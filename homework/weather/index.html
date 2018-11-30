@@ -3,11 +3,17 @@
 
 <head>
    <meta charset="UTF-8">
-   <title>Current Location | loganes1.github.io</title>
+   <title><span id="titleLocName">Current Location</span> | loganes1.github.io</title>
    <meta name="description" content="The weather in Franklin">
    <meta name="viewport" content="width=device-width">
    <link href="styles/screen.css" rel="stylesheet" type="text/css" media="screen">
 </head>
+
+<!-- 
+   Team members I worked with 
+   --------------------------
+   Idianis Ortiz
+-->
 
 <body>
    <header class="head">
@@ -54,7 +60,7 @@
             <p><b>Gusts:</b> <span id="gustSpeed"></span> mph</p>
          </div>
          <div class="tile">
-            <h3><span id="summary"></span></h3>
+            <h3><span id="summary">Summary</span></h3>
             <div id="weather-picture"></div>
          </div>
       </section>
@@ -91,10 +97,11 @@
    <footer>
       <hr>
       &copy;2018 The Weather Site
-      
-      <source media="(max-width: 750px)" srcset="/homework/weather/optimized-images/accuweather-small.png">
+      <picture>
+         <source media="(max-width: 750px)" srcset="/homework/weather/optimized-images/accuweather-small.png">
          <source srcset="/homework/weather/optimized-images/accuweather-large.png">
          <img src="/homework/weather/optimized-images/accuweather-small.png" alt="AccuWeather Logo">
+      </picture>
    </footer>
 
    <script src="/homework/weather/js/functions.js"></script>

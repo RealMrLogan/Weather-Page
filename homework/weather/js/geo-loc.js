@@ -24,6 +24,7 @@ function getGeoLocation() {
    } // end else
 } // end getGeoLocation
 
+/*
 // Get location code from API
 function getCode(LOCALE) {
    const API_KEY = '4ZtNR8Egdd3Ec38c20elIbtF7YOrCntW';
@@ -118,3 +119,4 @@ function getHourly(locData) {
       })
       .catch(error => console.log('There was an error: ', error))
 } // end getHourly function
+*/
