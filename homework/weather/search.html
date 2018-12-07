@@ -3,11 +3,17 @@
 
 <head>
    <meta charset="UTF-8">
-   <title>Franklin, ID | loganes1.github.io</title>
+   <title>Current Location | loganes1.github.io</title>
    <meta name="description" content="The weather in Franklin">
    <meta name="viewport" content="width=device-width">
    <link href="styles/screen.css" rel="stylesheet" type="text/css" media="screen">
 </head>
+
+<!-- 
+   Team members I worked with 
+   --------------------------
+
+-->
 
 <body>
    <header class="head">
@@ -25,22 +31,32 @@
          <li><a href="greenville-weather.html" title="Weather in Greenville SC">Greenville SC</a></li>
       </ul>
    </nav>
-   <main>
+
+   <section id="search-section">
+      <form method="get" action="https://www.accuweather.com/en/search-locations" id="searchform">
+         <input type="search" name="query" id="query">
+         <input type="submit" name="submit" value="Search" id="send">
+      </form>
+      <div id="searchResults" class=""></div>
+   </section>
+   <p id="status"></p>
+
+   <main class="hide">
       <section class="head">
-         <h2>Franklin, Idaho</h2>
+         <h2 id="locName">Franklin, Idaho</h2>
          <div id="demographics">
-            <p><b>Zip:</b> 83237</p>
-            <p><b>Elevation:</b> 4968</p>
-            <p><b>Location:</b> 42.07, 111.79</p>
+            <p><b>Zip:</b> <span id="locZip"></span></p>
+            <p><b>Elevation:</b> <span id="elevation"></span></p>
+            <p><b>Location:</b> <span id="geoLoc"></span></p>
          </div>
       </section>
       <section class="widgets">
          <div class="tile">
             <h3>Temperature</h3>
-            <p id="large-temp">55<span>&deg;</span>F</p>
+            <p id="large-temp"><span id="currentTemp"></span><span>&deg;F</span></p>
             <div>
-               <p>64F</p>
-               <p>41F</p>
+               <p><span id="highTemp"></span>F</p>
+               <p><span id="lowTemp"></span>F</p>
             </div>
             <p>Feels Like <span id="feelsLike">21</span>F</p>
          </div>
@@ -48,13 +64,13 @@
             <h3>Wind</h3>
             <p>N</p>
             <div id="dial"></div>
-            <p>5 mph</p>
+            <p><span id="windSpeed"></span> mph</p>
             <p><b>Direction: </b><span id="wind-direction">SW</span></p>
-            <p><b>Gusts:</b> 5mph</p>
+            <p><b>Gusts:</b> <span id="gustSpeed"></span> mph</p>
          </div>
          <div class="tile">
-            <h3>Rain</h3>
-            <img id="summary-pic" src="images/raindrops.jpg" alt="Rainy Weather">
+            <h3><span id="summary">Summary</span></h3>
+            <div id="weather-picture"></div>
          </div>
       </section>
       <section id="forecast">
@@ -90,9 +106,15 @@
    <footer>
       <hr>
       &copy;2018 The Weather Site
+      <picture>
+         <source media="(max-width: 750px)" srcset="/homework/weather/optimized-images/accuweather-small.png">
+         <source srcset="/homework/weather/optimized-images/accuweather-large.png">
+         <img src="/homework/weather/optimized-images/accuweather-small.png" alt="AccuWeather Logo">
+      </picture>
    </footer>
 
    <script src="/homework/weather/js/functions.js"></script>
+   <script src="js/search.js"></script>
 </body>
 
 </html>

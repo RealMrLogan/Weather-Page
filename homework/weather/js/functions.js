@@ -141,10 +141,11 @@ function changeSummaryImage(weatherCondition) {
          break;
    }
 }
+const API_KEY = '4ZtNR8Egdd3Ec38c20elIbtF7YOrCntW';
 
 // Get location code from API
 function getCode(LOCALE) {
-   const API_KEY = '4ZtNR8Egdd3Ec38c20elIbtF7YOrCntW';
+   //const API_KEY = '4ZtNR8Egdd3Ec38c20elIbtF7YOrCntW';
    const URL = 'https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=' + API_KEY + '&q=' + LOCALE;
    fetch(URL)
       .then(response => response.json())
@@ -166,7 +167,7 @@ function getCode(LOCALE) {
 
 // Get Current Weather data from API
 function getWeather(locData) {
-   const API_KEY = '4ZtNR8Egdd3Ec38c20elIbtF7YOrCntW';
+   //const API_KEY = '4ZtNR8Egdd3Ec38c20elIbtF7YOrCntW';
    const CITY_CODE = locData['key']; // We're getting data out of the object
    const URL = "https://dataservice.accuweather.com/currentconditions/v1/" + CITY_CODE + "?apikey=" + API_KEY + "&details=true";
    fetch(URL)
@@ -190,7 +191,7 @@ function getWeather(locData) {
 
 // Get next 12 hours of forecast data from API
 function getHourly(locData) {
-   const API_KEY = '4ZtNR8Egdd3Ec38c20elIbtF7YOrCntW';
+   //const API_KEY = '4ZtNR8Egdd3Ec38c20elIbtF7YOrCntW';
    const CITY_CODE = locData['key'];
    const URL = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/" + CITY_CODE + "?apikey=" + API_KEY;
    fetch(URL)
@@ -257,6 +258,8 @@ function buildPage(locData) {
 
    document.getElementById("status").className = "hide";
    document.getElementsByTagName("main")[0].className = "";
+
+   document.getElementById("searchResults").style.display = "none";
 } // end buildPage function
 
 // formats a value into a 12h AM/PM time string
@@ -290,3 +293,28 @@ function buildHourly(locData) {
    const forecast = document.getElementById("forecast");
    forecast.replaceChild(hourlyTime, forecast.children[1]);
 }
+
+// Get location info, based on city key, from API
+function getLocationByKey(cityKey) {
+   //const API_KEY = 'Your API Key Goes Here';
+   const URL = 'https://dataservice.accuweather.com/locations/v1/' + cityKey + '?apikey=' + API_KEY;
+   fetch(URL)
+      .then(response => response.json())
+      .then(function (data) {
+         console.log('Json object from getLocationByKey function:');
+         console.log(data);
+         const locData = {}; // Create an empty object
+         locData['key'] = data.Key; // Add the value to the object
+         locData['name'] = data.LocalizedName;
+         locData['postal'] = data.PrimaryPostalCode;
+         locData['state'] = data.AdministrativeArea.LocalizedName;
+         locData['stateAbbr'] = data.AdministrativeArea.ID;
+         let lat = data.GeoPosition.Latitude;
+         let long = data.GeoPosition.Longitude;
+         const LOCALE = lat + ', ' + long;
+         locData['geoposition'] = LOCALE;
+         locData['elevation'] = data.GeoPosition.Elevation.Imperial.Value;
+         getWeather(locData);
+      })
+      .catch(error => console.log('There was a getLocationByKey error: ', error))
+} // end getLocationByKey function
